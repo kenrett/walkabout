@@ -9,7 +9,14 @@ class GuidesController < ApplicationController
   end
 
   def create
-    redirect_to root_path
+    @guide = Guide.new(guide_params)
+
+    if @guide.save
+      redirect_to root_path
+    else
+      flash.now[:alert] = @guide.errors.full_messages.first
+      render :new
+    end
   end
 
   def update
@@ -27,6 +34,6 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guides).permit(:title, :description, :price)
+    params.require(:guide).permit(:title, :description, :price)
   end
 end
