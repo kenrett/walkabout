@@ -2,5 +2,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resource 'guide'
+  resources 'guides', :only => [:new, :create]
 end
