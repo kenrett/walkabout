@@ -1,7 +1,4 @@
 class GuidesController < ApplicationController
-  has_attached_file :photo, :styles => { :thumb => "250x150>", :medium => "300x300>" },
-  validates_attachment_content_type :photo, :content_type => ["image/jpg", "image/jpeg", "image/png"], message: "Only jpeg, and png images types are allowed",
-  # validates_attachment_size :photo, :less_than => 5.megabytes
 
   def index
     @guides = Guide.all
