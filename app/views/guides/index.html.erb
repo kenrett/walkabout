@@ -3,5 +3,8 @@
     <h2><%= guide.description %></h2>
     <h3><%= guide.price %></h3>
     <h4>NEED TO ADD PAYPAL BUTTON</h4>
+    <% if guide.photo_file_name.present? %>
+        <%= image_tag guide.photo.url %>
+    <% end %>
     <hr>
 <% end %>

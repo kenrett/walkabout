@@ -4,6 +4,7 @@
       <%= f.input :title, input_html: { :size => 55, :class => "mb10" } %>
       <%= f.input :description, input_html: { "cols" => 70, "rows" => 10, class: "mb10"  } %>
       <%= f.input :price, input_html: { class: "mb10"} %>
+      <%= f.input :photo, :as => :file, input_html: { class: "mb10"} %>
       <%= f.input :paypal_form_html, input_html: { class: "mb20"} %>
       <%= f.button :submit, "Add Guide" %>
   <% end %>
