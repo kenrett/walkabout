@@ -3,9 +3,13 @@
 <h3><%= guide.price %></h3>
 <h4>NEED TO ADD PAYPAL BUTTON</h4>
 <% if guide.photo_file_name.present? %>
-    <%= image_tag guide.photo.url %>
+    <%= image_tag guide.photo.url(:medium) %>
 <% end %>
+<br>
 <% if can? :update, guide %>
     <%= link_to "Edit", edit_guide_path(guide) %>
+<% end %>
+<% if can? :destroy, guide %>
+    <%= link_to "Delete", guide_path(guide), method: :delete %>
 <% end %>
 <hr>
