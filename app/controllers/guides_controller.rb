@@ -1,4 +1,5 @@
 class GuidesController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
 
   def index
     @guides = Guide.all
@@ -17,6 +18,10 @@ class GuidesController < ApplicationController
       flash.now[:alert] = @guide.errors.full_messages.first
       render :new
     end
+  end
+
+  def edit
+
   end
 
   def update
