@@ -1,0 +1,11 @@
+<h1><%= guide.title %></h1>
+<h2><%= guide.description %></h2>
+<h3><%= guide.price %></h3>
+<h4>NEED TO ADD PAYPAL BUTTON</h4>
+<% if guide.photo_file_name.present? %>
+    <%= image_tag guide.photo.url %>
+<% end %>
+<% if can? :update, guide %>
+    <%= link_to "Edit", edit_guide_path(guide) %>
+<% end %>
+<hr>

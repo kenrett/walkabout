@@ -21,7 +21,8 @@ class GuidesController < ApplicationController
   end
 
   def edit
-
+    @guide = Guide.find(params[:id])
+    unauthorized! if cannot? :edit, @guide
   end
 
   def update
