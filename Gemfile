@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.1.5'
 
 gem 'rails', '4.2.0'
+gem 'cancancan', '~> 1.10'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'devise', '~> 3.4.1'
 gem 'jbuilder', '~> 2.0'

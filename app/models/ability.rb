@@ -5,9 +5,13 @@ class Ability
     user ||= User.new
 
     if user.admin?
-      can :manage, :all
+      guide_permissions(user)
     else
       can :read, :all
     end
+  end
+
+  def guide_permissions(user)
+    can :manage, :all
   end
 end

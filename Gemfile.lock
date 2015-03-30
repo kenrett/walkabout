@@ -45,6 +45,7 @@ GEM
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
       slop (~> 3.6)
+    cancancan (1.10.1)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.5)
@@ -171,6 +172,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
   devise (~> 3.4.1)
   jbuilder (~> 2.0)
