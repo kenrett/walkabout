@@ -13,7 +13,7 @@ class GuidesController < ApplicationController
     @guide = Guide.new(guide_params)
 
     if @guide.save
-      redirect_to root_path
+      redirect_to :action => 'index'
     else
       flash.now[:alert] = @guide.errors.full_messages.first
       render :new
@@ -26,7 +26,7 @@ class GuidesController < ApplicationController
   end
 
   def update
-    @guide = Guide.find(guide_params)
+    @guide = Guide.find(params[:id])
 
     if @guide.update_attributes(guide_params)
         flash[:notice] = "Success"
@@ -35,6 +35,13 @@ class GuidesController < ApplicationController
         flash.now[:alert] = @guide.errors.full_messages.first
         render :edit
     end
+  end
+
+  def destroy
+    @guide = Guide.find(params[:id])
+    @guide.destroy
+
+    redirect_to :action => 'index'
   end
 
   private
