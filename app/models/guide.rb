@@ -1,5 +1,5 @@
 class Guide < ActiveRecord::Base
-  belongs_to :book
+  has_one :book
 
   validates_presence_of :title, :description, :price
   has_attached_file :photo, :styles => { :thumb => "250x150>", :medium => "300x300>" }
