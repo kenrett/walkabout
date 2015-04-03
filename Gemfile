@@ -17,6 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 
 group :development, :test do
   gem 'byebug'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
+  gem 'rspec-rails', '~> 3.0'
   gem 'spring'
   gem 'web-console', '~> 2.0'
 end
