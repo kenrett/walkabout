@@ -5,15 +5,24 @@ describe Book, :type => :model do
     @book = create(:book)
   end
 
-  it "has a title, price, and description" do
-    expect(@book).to be_valid
-  end
+  xit { is_expected.to have_many :guides }
+  xit { is_expected.to validate_presence_of(:title) }
+  xit { is_expected.to validate_presence_of(:price) }
+  xit { is_expected.to validate_presence_of(:description) }
 
-  xit "without a price is invalid" do
+  context "validates" do
+    it "it has a title, price, and description" do
+      expect(@book).to be_valid
+    end
 
-  end
+    it "without a price is invalid" do
+      @book.price = ''
+      expect(@book).to be_invalid
+    end
 
-  xit "without a description is invalid" do
-
+    it "without a description is invalid" do
+      @book.description = ''
+      expect(@book).to be_invalid
+    end
   end
 end
