@@ -58,6 +58,7 @@ GEM
       execjs
     coffee-script-source (1.9.1)
     columnize (0.9.0)
+    database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     devise (3.4.1)
@@ -159,6 +160,8 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (~> 1.1)
+    shoulda-matchers (2.8.0)
+      activesupport (>= 3.0.0)
     simple_form (3.0.3)
       actionpack (~> 4.0)
       activemodel (~> 4.0)
@@ -198,6 +201,7 @@ DEPENDENCIES
   byebug
   cancancan (~> 1.10)
   coffee-rails (~> 4.1.0)
+  database_cleaner
   devise (~> 3.4.1)
   factory_girl_rails (~> 4.0)
   faker
@@ -208,6 +212,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
+  shoulda-matchers
   simple_form
   spring
   turbolinks

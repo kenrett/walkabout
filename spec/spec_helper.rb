@@ -1,5 +1,7 @@
 require File.expand_path("../../config/environment", __FILE__)
+
 require 'rspec/rails'
+require 'database_cleaner'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
@@ -18,7 +20,32 @@ RSpec.configure do |config|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true
   end
 
+  config.before(:suite) do
+    DatabaseCleaner.clean_with :truncation
+  end
+
+  config.after(:suite) do
+    FileUtils.rm_r Rails.root.join("public/system") if File.directory?(Rails.root.join("public/system"))
+    FileUtils.mkdir_p Rails.root.join("public/system") unless File.directory?(Rails.root.join("public/system"))
+  end
+
   config.mock_with :rspec do |mocks|
     mocks.verify_partial_doubles = true
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.strategy = :transaction
+  end
+
+  config.before(:each, type: :feature) do
+    DatabaseCleaner.strategy = :truncation
+  end
+
+  config.before(:each) do
+    DatabaseCleaner.start
+  end
+
+  config.after(:each) do
+    DatabaseCleaner.clean
   end
 end
