@@ -22,9 +22,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'spring'
   gem 'web-console', '~> 2.0'
+  gem 'shoulda-matchers', require: false
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
 end
