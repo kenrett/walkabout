@@ -1,0 +1,23 @@
+<% if @book.photo_file_name.present? %>
+    <div class="carousel" id="mycarousel">
+      <div class="carousel-inner" tabindex="0">
+        <div class="item active" style="opacity: 1, width: 100%">
+          <%= image_tag @book.photo.url(:large), width: "100%" %>
+          <div class="carousel-caption">
+            <h1><%= @book.title %></h1>
+            <h2><%= @book.description %></h2>
+            <h3><%= @book.price %></h3>
+            <h4>NEED TO ADD PAYPAL BUTTON</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
+<br>
+<% if can? :update, @book %>
+    <%= link_to "Edit", edit_book_path(@book) %>
+<% end %>
+<% if can? :destroy, @book %>
+    <%= link_to "Delete", book_path(@book), method: :delete %>
+<% end %>
+<hr>

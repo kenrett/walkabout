@@ -20,6 +20,10 @@ class BooksController < ApplicationController
     end
   end
 
+  def show
+    @book = Book.find(params[:id])
+  end
+
   def edit
     @book = Book.find(params[:id])
     unauthorized! if cannot? :edit, @book
@@ -28,7 +32,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
 
-    if @guide.update_attributes(guide_params)
+    if @book.update_attributes(book_params)
       flash[:notice] = 'Success'
       redirect_to book_path(@book)
     else
@@ -47,6 +51,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :description, :price, :paypal_form_html, :photo)
+    params.require(:book).permit(:title, :description, :price, :paypal_form_html, :jump_link, :photo)
   end
 end

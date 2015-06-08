@@ -20,7 +20,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
   gem 'rspec-rails', '~> 3.0'
-  gem 'spring'
+  gem 'spring', '~> 1.3.4'
   gem 'web-console', '~> 2.0'
   gem 'shoulda-matchers', require: false
 end

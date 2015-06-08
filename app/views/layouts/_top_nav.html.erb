@@ -28,8 +28,10 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Southern California</a></li>
-            <li><a href="#">Northern California</a></li>
+            <% @books = Book.all %>
+            <% @books.each do |book| %>
+              <li><%= link_to book.title, book_path(book), locals: { book: book } %></li>
+            <% end %>
           </ul>
         </li>
       </ul>

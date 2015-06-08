@@ -1,0 +1,15 @@
+<h1><%= book.title %></h1>
+<% if book.photo_file_name.present? %>
+    <%= i   mage_tag book.photo.url(:medium) %>
+<% end %>
+<h2><%= book.description %></h2>
+<h3><%= book.price %></h3>
+<h4>NEED TO ADD PAYPAL BUTTON</h4>
+<br>
+<% if can? :update, book %>
+    <%= link_to "Edit", edit_book_path(book) %>
+<% end %>
+<% if can? :destroy, book %>
+    <%= link_to "Delete", book_path(book), method: :delete %>
+<% end %>
+<hr>

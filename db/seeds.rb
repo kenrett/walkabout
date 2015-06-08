@@ -8,3 +8,4 @@
 
 books = Book.create([{ title: 'Book 1', description: 'A really cool place.', price: 16.99 }, { title: 'Book 2', description: 'A really cool place.', price: 16.99}])
 guides = Guide.create([{ title: 'Guide 1', description: 'A really cool place.', price: 5.99}, { title: 'Guide 2', description: 'A really cool place.', price: 5.99},{ title: 'Guide 3', description: 'A really cool place.', price: 5.99}])
+admin = User.create([{email: 'kenrettberg@gmail.com', password: 'password', password_confirmation: 'password', admin: 'true'}])
