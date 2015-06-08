@@ -1,0 +1,11 @@
+<div class="mt10 ml10">
+  <h1>Create New Guide</h1>
+  <%= simple_form_for @guide do |f| %>
+      <%= f.input :title, input_html: { :size => 55, :class => "mb10" } %>
+      <%= f.input :description, input_html: { "cols" => 70, "rows" => 10, class: "mb10"  } %>
+      <%= f.input :price, input_html: { class: "mb10"} %>
+      <%= f.input :photo, :as => :file, input_html: { class: "mb10"} %>
+      <%= f.input :paypal_form_html, input_html: { class: "mb20"} %>
+      <%= f.button :submit, "Add Guide" %>
+  <% end %>
+</div>
