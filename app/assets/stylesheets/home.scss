@@ -1,3 +1,17 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#home_page_body {
+  //background-color: #c4e3f3;
+}
+
+.jumbotron {
+  background-image: url("CIMG2621.jpeg");
+  background-repeat: no-repeat;
+  background-size: 1500px 300px;
+
+  .white-font {
+    color: white;
+  }
+}
+
