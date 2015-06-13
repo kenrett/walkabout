@@ -4,8 +4,8 @@
         <div class="item active">
           <%= image_tag @book.photo.url(:large), class: "book_picture" %>
           <div class="carousel-caption">
-            <h1><%= @book.title %></h1>
-            <h3><%= @book.price %></h3>
+            <h1 class="mb20"><%= @book.title %></h1>
+            <h3>$<%= @book.price %></h3>
             <h4><%= @book.paypal_form_html.html_safe %></h4>
           </div>
         </div>
