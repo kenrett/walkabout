@@ -1,0 +1,34 @@
+<% if @guide.photo_file_name.present? %>
+    <div class="carousel" id="mycarousel">
+      <div class="carousel-inner" tabindex="0">
+        <div class="item active">
+          <%= image_tag @guide.photo.url(:large), class: "guide_picture" %>
+          <div class="carousel-caption">
+            <h1 class="mb20"><%= @guide.title %></h1>
+
+            <h3>$<%= @guide.price %></h3>
+            <% if @guide.paypal_form_html %>
+                <h4><%= @guide.paypal_form_html.html_safe %></h4>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3><%= @guide.description %></h3>
+<% else %>
+    <div class="guide_info">
+      <h1><%= @guide.title %></h1>
+
+      <h3><%= @guide.price %></h3>
+
+      <h3><%= @guide.paypal_form_html.html_safe %></h3>
+    </div>
+<% end %>
+<br>
+<% if can? :update, @guide %>
+    <%= link_to "Edit", edit_guide_path(@guide) %>
+<% end %>
+<% if can? :destroy, @guide %>
+    <%= link_to "Delete", guide_path(@guide), method: :delete %>
+<% end %>
+<hr>

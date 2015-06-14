@@ -4,7 +4,7 @@
 <% end %>
 <h2><%= guide.description %></h2>
 <h3>$<%= guide.price %></h3>
-<h4>NEED TO ADD PAYPAL BUTTON</h4>
+<h4><%= guide.paypal_form_html %></h4>
 <br>
 <% if can? :update, guide %>
     <%= link_to "Edit", edit_guide_path(guide) %>

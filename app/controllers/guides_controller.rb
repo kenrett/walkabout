@@ -20,6 +20,10 @@ class GuidesController < ApplicationController
     end
   end
 
+  def show
+    @guide = Guide.find(params[:id])
+  end
+
   def edit
     @guide = Guide.find(params[:id])
     unauthorized! if cannot? :edit, @guide
@@ -47,6 +51,6 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guide).permit(:title, :description, :price, :photo)
+    params.require(:guide).permit(:title, :description, :price, :photo, :paypal_form_html)
   end
 end

@@ -32,9 +32,9 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <% @books = Book.all %>
-            <% @books.each do |book| %>
-                <li><%= link_to book.title, book_path(book), locals: {book: book} %></li>
+            <% @guide = Guide.all %>
+            <% @guide.each do |guide| %>
+                <li><%= link_to guide.title, guide_path(guide), locals: {guide: guide} %></li>
             <% end %>
           </ul>
         </li>
